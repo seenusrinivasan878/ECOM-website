@@ -1,10 +1,16 @@
-// import {test} from  '@playwright/test'
+import {test} from  '@playwright/test'
 
-// test("Dropdown",async ({page})=>{
-//     await page.goto('https://www.testautomationcentral.com/demo/dropdown.html');
-//     await page.getByRole('button',{name:"Simple Dropdown"})
-//     await page.locator('form-select block w-full mt-1'),selectOption('option1','option2','option3')
-//     await page.getByRole('button',{name:"Styled Dropdown"})
-//     await page.locator()
+test('launch flipkart',async ({page})=>{
+    await page.goto('https://www.myntra.com/boy-tshirts');
+    const title = await page.title();
+    console.log(title);
+    console.log(await page.url());
 
-// })
+    await page.goto('http://www.instagram.com')
+    console.log(await page.url());
+    console.log(await page.title());
+    await page.goBack();
+    await page.goForward();
+
+})
+
